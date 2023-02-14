@@ -9,7 +9,11 @@
       "css": ["style.css"]
     }
   ],
-  "permissions": ["activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "dwt@2x.png"
+  },
+  "permissions": [],
   "web_accessible_resources": [
     {
       "resources": ["Resources/*"],
