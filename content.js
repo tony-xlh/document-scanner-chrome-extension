@@ -7,22 +7,26 @@ async function init(){
   await loadLibrary(resourcesURL+"/dynamsoft.webtwain.config.js","text/javascript");
   await loadLibrary(resourcesURL+"/addon/dynamsoft.webtwain.addon.camera.js","text/javascript");
   await loadLibrary(resourcesURL+"/addon/dynamsoft.webtwain.addon.pdf.js","text/javascript");
-  await loadLibrary(resourcesURL+"/dwt.js","text/javascript","dwt","resourcesURL",resourcesURL);
+  chrome.storage.sync.get({
+    license: ''
+  }, async function(items) {
+    await loadLibrary(resourcesURL+"/dwt.js","text/javascript","dwt",{"resourcesURL":resourcesURL,"license":items.license});
+  });
+  
 }
 
-function loadLibrary(src,type,id,dataName,dataValue){
+function loadLibrary(src,type,id,data){
   return new Promise(function (resolve, reject) {
     let scriptEle = document.createElement("script");
     scriptEle.setAttribute("type", type);
     scriptEle.setAttribute("src", src);
-    console.log(id);
-    console.log(dataName);
-    console.log(dataValue);
     if (id) {
       scriptEle.id = id;
     }
-    if (dataValue && dataName) {
-      scriptEle.setAttribute(dataName, dataValue);
+    if (data) {
+      for (let key in data) {
+        scriptEle.setAttribute(key, data[key]);
+      }
     }
     document.body.appendChild(scriptEle);
     scriptEle.addEventListener("load", () => {

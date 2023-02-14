@@ -141,6 +141,11 @@ function save(){
 function initDWT(){
   console.log("initDWT");
   const status = document.querySelector(".dwt-status");
+  const license = document.getElementById("dwt").getAttribute("license");
+  if (license) {
+    console.log("using license: "+license);
+    Dynamsoft.DWT.ProductKey = license;
+  }
   Dynamsoft.DWT.Containers = [{ ContainerId: 'dwtcontrolContainer',Width: 270, Height: 350 }];
   Dynamsoft.DWT.RegisterEvent('OnWebTwainReady', function () {
     console.log("ready");
