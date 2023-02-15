@@ -13,7 +13,9 @@ function load() {
   chrome.storage.sync.get({
     license: ''
   }, function(items) {
-    document.getElementById("license").value = items.license;
+    if (items.license) {
+      document.getElementById("license").value = items.license;
+    }
   });
 }
 
