@@ -72,7 +72,6 @@ let DWTChromeExtension = {
     this.modal.style.display = "none";
   },
   scan: function(){
-    console.log("scan");
     if (this.DWObject) {
       if (Dynamsoft.Lib.env.bMobile) {
         this.DWObject.Addon.Camera.scanDocument();
