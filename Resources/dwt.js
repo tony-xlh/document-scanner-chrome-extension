@@ -45,6 +45,12 @@ let DWTChromeExtension = {
       scanBtn.addEventListener("click", () => {
         this.scan();
       });
+
+      const editBtn = document.createElement("button");
+      editBtn.innerText = "Edit";
+      editBtn.addEventListener("click", () => {
+        this.edit();
+      });
       
       const copyBtn = document.createElement("button");
       copyBtn.innerText = "Copy selected";
@@ -62,6 +68,7 @@ let DWTChromeExtension = {
       status.className="dwt-status";
   
       controls.appendChild(scanBtn);
+      controls.appendChild(editBtn);
       controls.appendChild(copyBtn);
       controls.appendChild(saveBtn);
       controls.appendChild(status);
@@ -96,6 +103,12 @@ let DWTChromeExtension = {
           }
         );
       }
+    }
+  },
+  edit: function(){
+    if (this.DWObject) {
+      let imageEditor = this.DWObject.Viewer.createImageEditor();
+      imageEditor.show();
     }
   },
   copy: function(){
