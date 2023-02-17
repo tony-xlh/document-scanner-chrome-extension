@@ -4,21 +4,6 @@ let DWTChromeExtension = {
   load: function(){
     const resourcesURL = document.getElementById("dwt").getAttribute("resourcesURL");
     Dynamsoft.DWT.ResourcesPath = resourcesURL;
-    this.addButton(resourcesURL);
-  },
-  addButton: function(resourcesURL){
-    const button = document.createElement("div");
-    button.className = "dwt-fab";
-    const a = document.createElement("a")
-    a.href = "javascript:void(0)";
-    const icon = document.createElement("img")
-    icon.src = resourcesURL+"/scanner-scan.svg";
-    a.appendChild(icon);
-    button.appendChild(a);
-    document.body.appendChild(button);
-    button.addEventListener("click", () => {
-      this.showModal();
-    });
   },
   showModal: function(){
     if (!this.modal) {
