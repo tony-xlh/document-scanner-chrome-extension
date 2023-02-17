@@ -6,3 +6,8 @@ document.getElementById("scan").addEventListener("click", () => {
 	  });
 	});
 });
+
+document.getElementById("dwtpage").addEventListener("click", () => {
+  const newURL = "https://www.dynamsoft.com/web-twain/overview/";
+  chrome.tabs.create({ url: newURL });
+})
