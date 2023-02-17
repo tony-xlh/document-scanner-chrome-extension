@@ -66,12 +66,10 @@ let DWTChromeExtension = {
         this.initDWT();
       }
     }
-    document.querySelector(".dwt-fab").style.display = "none";
     this.modal.style.display = "";
   },
   hideModal: function() {
     this.modal.style.display = "none";
-    document.querySelector(".dwt-fab").style.display = "";
   },
   scan: function(){
     console.log("scan");
