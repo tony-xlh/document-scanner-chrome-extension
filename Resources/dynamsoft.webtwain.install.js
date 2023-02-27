@@ -426,7 +426,10 @@
       var purchaseUrl = 'https://www.dynamsoft.com/customer/license/trialLicense?product=dwt&deploymenttype=js';
       addMessage = '<div>You can register for a free 30-day trial <a href="' + purchaseUrl + '" target="_blank" class="dynamsoft-major-color">here</a>. Make sure to select the product Dynamic Web TWAIN.</div>';
     }
-    addMessage = addMessage + `<div>You can configure your license in the options page.</div>`
+    if (message.indexOf("trial") != -1) {
+        addMessage = addMessage + `<div>You can configure your license in the options page.</div>`;
+    }
+    
     ObjString = [
       message,
       addMessage
