@@ -20,7 +20,6 @@ async function init(){
   }, async function(items) {
     await loadLibrary(resourcesURL+"/dwt.js","text/javascript","dwt",{"resourcesURL":resourcesURL,"license":items.license});
   });
-  
 }
 
 function loadLibrary(src,type,id,data){

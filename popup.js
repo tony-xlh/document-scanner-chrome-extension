@@ -11,3 +11,9 @@ document.getElementById("dwtpage").addEventListener("click", () => {
   const newURL = "https://www.dynamsoft.com/web-twain/overview/";
   chrome.tabs.create({ url: newURL });
 })
+
+document.getElementById("optionspage").addEventListener("click", () => {
+  const newURL = "/options.html";
+  chrome.tabs.create({ url: newURL });
+})
+

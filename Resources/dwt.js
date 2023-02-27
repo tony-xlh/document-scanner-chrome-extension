@@ -127,7 +127,6 @@ let DWTChromeExtension = {
     }
   },
   initDWT: function(){
-    console.log("initDWT");
     const status = document.querySelector(".dwt-status");
     const license = document.getElementById("dwt").getAttribute("license");
     if (license) {
