@@ -423,10 +423,11 @@
       message.indexOf('Internet connection') > -1 ||
       message.indexOf('Storage') > -1) {
 
-      var purchaseUrl = 'https://www.dynamsoft.com/customer/license/trialLicense?product=dwt&deploymenttype=js';
+      var purchaseUrl = 'https://www.dynamsoft.com/customer/license/trialLicense?product=dwt&deploymenttype=js&utm_source=chrome-store';
       addMessage = '<div>You can register for a free 30-day trial <a href="' + purchaseUrl + '" target="_blank" class="dynamsoft-major-color">here</a>. Make sure to select the product Dynamic Web TWAIN.</div>';
     }
     if (message.indexOf("trial") != -1) {
+        message = message.replace("https://www.dynamsoft.com/customer/license/trialLicense?product=dwt&deploymenttype=unknown","https://www.dynamsoft.com/customer/license/trialLicense?product=dwt&deploymenttype=unknown&utm_source=chrome-store")
         addMessage = addMessage + `<div>You can configure your license in the options page.</div>`;
     }
     
