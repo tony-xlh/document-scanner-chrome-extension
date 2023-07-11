@@ -29,6 +29,11 @@
   height: 50px;
 }
 
+.dwt-controls button {
+  border: 1px solid black;
+  background-color: rgb(240, 240, 240);
+}
+
 #dwtcontrolContainer {
   width: 100%;
   height: calc(100% - 50px);
